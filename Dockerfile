@@ -10,6 +10,7 @@ RUN  \
      apk update && \
      apk add --no-cache zip && \
      apk add --no-cache git && \
+     apk add --no-cache curl && \
      git clone https://github.com/minio/mc && cd mc && \
      go install -v -ldflags "$(go run buildscripts/gen-ldflags.go)"
 
