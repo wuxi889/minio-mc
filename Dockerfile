@@ -19,6 +19,8 @@ COPY --from=builder /go/bin/mc /usr/bin/mc
 COPY --from=builder /go/mc/CREDITS /licenses/CREDITS
 COPY --from=builder /go/mc/LICENSE /licenses/LICENSE
 
+# Can use `microdnf install yum --nodocs`
+
 RUN  \
      microdnf update --nodocs && \
      microdnf install ca-certificates --nodocs && \
