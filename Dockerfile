@@ -21,11 +21,12 @@ ARG TARGETARCH
 COPY --from=builder /go/bin/mc /usr/bin/mc
 COPY --from=builder /go/mc/CREDITS /licenses/CREDITS
 COPY --from=builder /go/mc/LICENSE /licenses/LICENSE
+COPY --from=builder /usr/bin/zip /usr/bin/zip
+COPY --from=builder /usr/bin/curl /usr/bin/curl
 
 RUN  \
      microdnf update --nodocs && \
      microdnf install ca-certificates --nodocs && \
      microdnf clean all
 
-CMD ["sh"]
-# ENTRYPOINT ["mc"]
+ENTRYPOINT ["mc"]
