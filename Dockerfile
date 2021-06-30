@@ -27,4 +27,5 @@ RUN  \
      microdnf install ca-certificates --nodocs && \
      microdnf clean all
 
-ENTRYPOINT ["mc", "zip", "curl --help"]
+CMD ["sh"]
+# ENTRYPOINT ["mc"]
